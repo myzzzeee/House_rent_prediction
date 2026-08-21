@@ -22,17 +22,29 @@ st.markdown("""
         }
         div.stButton > button {
             width: 100%;
-            background-color: #2563EB;
+            min-height: 3rem;
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
             font-weight: 600;
-            padding: 0.6rem 0;
-            border-radius: 8px;
+            font-size: 1.1rem;
+            padding: 0.9rem 1.5rem;
+            border-radius: 10px;
             border: none;
-            margin-top: 0.5rem;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            transition: all 0.2s ease-in-out;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
         }
         div.stButton > button:hover {
-            background-color: #1D4ED8;
+            background: linear-gradient(135deg, #2563EB, #1E40AF);
             color: white;
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
+            transform: translateY(-1px);
+        }
+        div.stButton > button:active {
+            transform: translateY(0px);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
         }
         .result-box {
             background-color: #064E3B;
@@ -88,7 +100,7 @@ with col4:
     Point_of_contact = st.selectbox('Point of Contact', options_for('Point of Contact'))
 
 # ---------- Predict ----------
-if st.button("Predict Rent"):
+if st.button("🔍  Predict Rent"):
     categorical_inputs = {
         'Floor': Floor,
         'Area Type': Area_Type,
