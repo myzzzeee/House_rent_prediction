@@ -55,7 +55,8 @@ if st.button("Predict Rent"):
             encoded['Point of Contact']
         ]])
 
-        predicted_rent = lr.predict(features)[0]
+        #predicted_rent = lr.predict(features)[0]
+        predicted_rent = max(0, lr.predict(features)[0])
         st.success(f"Predicted Rent: {predicted_rent:,.0f}")
 
     except ValueError as e:
